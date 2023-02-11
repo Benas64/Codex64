@@ -48,7 +48,7 @@ def calcular():
     global todos_valores
     resultado=str(eval(todos_valores))
     
-    valor_texto.setstr((resultado))
+    valor_texto.set(resultado)
 
 
 #Função limpar tela
@@ -64,7 +64,7 @@ app_label=Label(frame_tela,textvariable=valor_texto,width=16,height=2,padx=7,rel
 app_label.place(x=0,y=0)
 
 #Criando botões
-b_1=Button(frame_corpo,command=lambda:limpar_tela,text="C",width=11,height=2,bg=cor4,font='Ivy 13 bold',relief=RAISED,overrelief=RIDGE)
+b_1=Button(frame_corpo,command=lambda:limpar_tela(),text="C",width=11,height=2,bg=cor4,font='Ivy 13 bold',relief=RAISED,overrelief=RIDGE)
 b_1.place(x=0,y=0)
 b_2=Button(frame_corpo,command=lambda:entrar_valores('%'),text="%",width=5,height=2,bg=cor4,font='Ivy 13 bold',relief=RAISED,overrelief=RIDGE)
 b_2.place(x=118,y=0)
@@ -101,7 +101,7 @@ b_16=Button(frame_corpo,command=lambda:entrar_valores('0'),text="0",width=11,hei
 b_16.place(x=0,y=208)
 b_17=Button(frame_corpo,command=lambda:entrar_valores('.'),text=".",width=5,height=2,bg=cor4,font='Ivy 13 bold',relief=RAISED,overrelief=RIDGE)
 b_17.place(x=118,y=208)
-b_18=Button(frame_corpo,command=lambda:calcular,text="=",width=5,height=2,bg=cor5,fg=cor2,font='Ivy 13 bold',relief=RAISED,overrelief=RIDGE )
+b_18=Button(frame_corpo,command=lambda:calcular(),text="=",width=5,height=2,bg=cor5,fg=cor2,font='Ivy 13 bold',relief=RAISED,overrelief=RIDGE )
 b_18.place(x=177,y=208)
 
 
