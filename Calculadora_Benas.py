@@ -31,10 +31,11 @@ frame_corpo.grid(row=1,column=0)
 todos_valores=''
 #Criando função
 def entrar_valores(event):
+
     global todos_valores
     
     todos_valores=todos_valores+ str(event)
-    resultado= eval(todos_valores)
+    
     
 
     #passando valor para tela
@@ -45,20 +46,21 @@ def entrar_valores(event):
 
 def calcular():
     global todos_valores
-    resultado=eval(todos_valores)
+    resultado=str(eval(todos_valores))
     
-    valor_texto.set(str(resultado))
+    valor_texto.setstr((resultado))
+
 
 #Função limpar tela
 def limpar_tela():
     global todos_valores
     todos_valores="" 
-    valor_texto.set()
+    valor_texto.set("")
   
 
 # Criando Labels
 valor_texto=StringVar()
-app_label=Label(frame_tela,text=valor_texto,width=16,height=2,padx=7,relief=FLAT,anchor="e",justify=RIGHT,font=('Ivy 18'),bg=cor3,fg=cor1)
+app_label=Label(frame_tela,textvariable=valor_texto,width=16,height=2,padx=7,relief=FLAT,anchor="e",justify=RIGHT,font=('Ivy 18'),bg=cor3,fg=cor1)
 app_label.place(x=0,y=0)
 
 #Criando botões
@@ -101,5 +103,6 @@ b_17=Button(frame_corpo,command=lambda:entrar_valores('.'),text=".",width=5,heig
 b_17.place(x=118,y=208)
 b_18=Button(frame_corpo,command=lambda:calcular,text="=",width=5,height=2,bg=cor5,fg=cor2,font='Ivy 13 bold',relief=RAISED,overrelief=RIDGE )
 b_18.place(x=177,y=208)
+
 
 janela.mainloop()
